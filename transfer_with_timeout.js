@@ -9,7 +9,7 @@ import {
   alicePub,
   bobPriv,
   bobPub,
-} from './common.ts';
+} from './common.js';
 
 // Compile the TransferWithTimeout contract
 const artifact = compileFile(new URL('transfer_with_timeout.cash', import.meta.url));
