@@ -24,7 +24,7 @@ export const aliceAddress = encodeCashAddress('bchtest', 'p2pkh', alicePkh);
 
 
 // Derive Bob's private key, public key, public key hash and address ---CMGT
-const bobNode = deriveHdPath(rootNode, `${baseDerivationPath}/0`);
+const bobNode = deriveHdPath(rootNode, `${baseDerivationPath}/1`);
 if (typeof bobNode === 'string') throw new Error();
 export const bobPub = secp256k1.derivePublicKeyCompressed(bobNode.privateKey);
 export const bobPriv = bobNode.privateKey;
