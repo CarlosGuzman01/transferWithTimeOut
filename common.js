@@ -21,3 +21,12 @@ export const alicePub = secp256k1.derivePublicKeyCompressed(aliceNode.privateKey
 export const alicePriv = aliceNode.privateKey;
 export const alicePkh = hash160(alicePub);
 export const aliceAddress = encodeCashAddress('bchtest', 'p2pkh', alicePkh);
+
+
+// Derive Bob's private key, public key, public key hash and address ---CMGT
+const bobNode = deriveHdPath(rootNode, `${baseDerivationPath}/0`);
+if (typeof bobNode === 'string') throw new Error();
+export const bobPub = secp256k1.derivePublicKeyCompressed(bobNode.privateKey);
+export const bobPriv = bobNode.privateKey;
+export const bobPkh = hash160(bobPub);
+export const bobAddress = encodeCashAddress('bchtest', 'p2pkh', bobPkh);

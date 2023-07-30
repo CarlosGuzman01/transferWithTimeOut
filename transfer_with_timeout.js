@@ -3,13 +3,15 @@ import { compileFile } from 'cashc';
 import { Contract, ElectrumNetworkProvider, SignatureTemplate } from 'cashscript';
 import { URL } from 'url';
 
-// Import Bob and Alice's keys from common.ts
+
+// Import Bob and Alice's keys from common.js
 import {
   alicePriv,
   alicePub,
   bobPriv,
   bobPub,
 } from './common.js';
+
 
 // Compile the TransferWithTimeout contract
 const artifact = compileFile(new URL('transfer_with_timeout.cash', import.meta.url));
